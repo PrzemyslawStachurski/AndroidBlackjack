@@ -328,8 +328,13 @@ public class play extends AppCompatActivity {
 
 
     public void updateValues() {
-        textViewDValue = (TextView) findViewById(R.id.textViewDValue);
-        textViewDValue.setText(String.valueOf(dealerHand.cardsValue()));
+        if (endRound){
+            textViewDValue = (TextView) findViewById(R.id.textViewDValue);
+            textViewDValue.setText(String.valueOf(dealerHand.cardsValue()));
+        }else{
+            textViewDValue = (TextView) findViewById(R.id.textViewDValue);
+            textViewDValue.setText(String.valueOf(dealerHand.getCard(0).getValue()));
+        }
 
         textViewYValue = (TextView) findViewById(R.id.textViewYValue);
         textViewYValue.setText(String.valueOf(playerHand.cardsValue()));
@@ -393,7 +398,7 @@ public class play extends AppCompatActivity {
             updateValues();
         }
         if (playerHand.cardsValue() < dealerHand.cardsValue() && !endRound){
-            playerMoney+= playerBet;
+            playerMoney-= playerBet;
             loseDialog();
             endRound=true;
             updateValues();
