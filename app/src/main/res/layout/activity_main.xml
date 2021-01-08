@@ -66,9 +66,12 @@
             android:layout_height="31dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:clickable="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_menu" />
+            app:srcCompat="@drawable/ic_menu"
+            android:focusable="true" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -76,12 +79,32 @@
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_drawer_menu"
         android:layout_gravity="start"
         android:id="@+id/nav_view"
         android:fitsSystemWindows="true"
-        app:theme="@style/NavigationDrawerStyle"/>
+        app:theme="@style/NavigationDrawerStyle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/nav_header" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19dp"
+                android:typeface="normal"
+                android:textColor="@android:color/black"
+                android:text=" -Press play button to start a new game.\n\n -Under 'Your bet' field type in the amount of money you would like to bet. \n\n -Confirm your choice by pressing 'Confirm bet' button. \n\n -When your cards are dealt decide if you want to hit or stand \n\n -When you press 'Hit' you are dealt another card. \n\n -When you press 'Stand' dealer reveals his cards and the round ends. \n\n -If you lose all your money you can press 'Play again' to start a new game." />
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
 

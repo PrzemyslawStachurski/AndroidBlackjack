@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/tlo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tlo"
-    tools:context=".MainActivity">
+    tools:context=".play"
+    tools:openDrawer="start">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tlo">
 
 
     <Button
@@ -322,20 +330,20 @@
         app:layout_constraintStart_toEndOf="@+id/dealer"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewDValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="16dp"
-        android:alpha="0.6"
-        android:text=""
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textViewDValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:layout_marginEnd="2dp"
+            android:alpha="0.6"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+        <ImageView
         android:id="@+id/rulesButton"
         android:layout_width="40dp"
         android:layout_height="31dp"
@@ -347,3 +355,35 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/nav_view"
+        android:fitsSystemWindows="true"
+        app:theme="@style/NavigationDrawerStyle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/nav_header" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19dp"
+                android:typeface="normal"
+                android:textColor="@android:color/black"
+                android:text=" -Press play button to start a new game.\n\n -Under 'Your bet' field type in the amount of money you would like to bet. \n\n -Confirm your choice by pressing 'Confirm bet' button. \n\n -When your cards are dealt decide if you want to hit or stand \n\n -When you press 'Hit' you are dealt another card. \n\n -When you press 'Stand' dealer reveals his cards and the round ends. \n\n -If you lose all your money you can press 'Play again' to start a new game." />
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
