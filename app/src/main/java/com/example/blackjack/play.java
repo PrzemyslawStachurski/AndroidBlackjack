@@ -358,7 +358,7 @@ public class play extends AppCompatActivity {
             textViewDValue.setText(String.valueOf(dealerHand.cardsValue()));
         }else{
             textViewDValue = (TextView) findViewById(R.id.textViewDValue);
-            textViewDValue.setText(String.valueOf(dealerHand.getCard(0).getValue()));
+            textViewDValue.setText(String.valueOf(dealerHand.getCard(0).getValueAsInt()));
         }
 
         textViewYValue = (TextView) findViewById(R.id.textViewYValue);
