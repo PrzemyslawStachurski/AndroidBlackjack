@@ -252,7 +252,7 @@ public class play extends AppCompatActivity {
         builder.show();
     }
 
-    public void endingRound() {
+    public void endingRound() {// method resetting evertything and prepareing for next round
         dealersCard1.animate().translationXBy(2000).rotation(360).setDuration(1);
         dealersCard2.animate().translationXBy(2000).rotation(360).setDuration(1);
         yourCard1.animate().translationXBy(2000).rotation(360).setDuration(1);
