@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -252,7 +253,14 @@ public class play extends AppCompatActivity {
         builder.show();
     }
 
-    public void endingRound() {// method resetting evertything and prepareing for next round
+    public void brokeCheck(){
+        if(playerMoney < 1){
+            Intent intent = new Intent(this, playAgain.class);
+            startActivity(intent);
+        }
+    }
+
+    public void endingRound() {
         dealersCard1.animate().translationXBy(2000).rotation(360).setDuration(1);
         dealersCard2.animate().translationXBy(2000).rotation(360).setDuration(1);
         yourCard1.animate().translationXBy(2000).rotation(360).setDuration(1);
@@ -307,7 +315,10 @@ public class play extends AppCompatActivity {
         betConfirmed = false;
 
 
+
     }
+
+
 
     public void bustCheck() {
         if (playerHand.cardsValue() > 21) { //losing end
