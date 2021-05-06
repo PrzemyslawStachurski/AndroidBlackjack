@@ -42,4 +42,4 @@ If you lose all your money you can go back to main menu or start another game. <
 The project you can find here is in fully playable state but we wish to add more features in the foreseeable future. 
 
 ## Authors
-Created by [@DrelaDominika] and [@PrzemyslawStachurski] - feel free to contact us!
+Created by [DrelaDominika](https://github.com/DrelaDominika) and [PrzemyslawStachurski](https://github.com/PrzemyslawStachurski) - feel free to contact us!
